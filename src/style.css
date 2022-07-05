@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: "sf-pro";
-    src: url("/fonts/SF-Pro-Display-Regular.otf"),
+    src: url("/fonts/SF-Pro-Display-Light.otf"),
 }
 
 @font-face {
@@ -13,12 +13,16 @@
 }
 
 body {
-    font-family: "sf-pro";
+    font-family: "sf-pro", sans-serif;
+}
+
+h2 {
+    @apply text-center text-xs font-thin
 }
 
 .font-sackers {
-    font-family: "sackers";
-    font-weight: 500;
+    font-family: "sackers", sans-serif;
+    font-weight: 300;
 }
 
 .btn {

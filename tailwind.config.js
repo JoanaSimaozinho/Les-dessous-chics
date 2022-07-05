@@ -2,8 +2,8 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     fontFamily: {
-      sans: ['sf-pro', 'sans-serif'],
-      sans: ['sackers', 'sans-serif']
+      "sf-pro": ['sf-pro', 'sans-serif'],
+      "sackers": ['sackers', 'sans-serif'],
     },
     extend: {},
   },
