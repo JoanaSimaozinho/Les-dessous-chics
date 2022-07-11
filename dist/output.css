@@ -617,31 +617,6 @@ video {
   margin-right: auto;
 }
 
-.mx-8 {
-  margin-left: 2rem;
-  margin-right: 2rem;
-}
-
-.mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
-}
-
-.mx-6 {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
-
-.mx-7 {
-  margin-left: 1.75rem;
-  margin-right: 1.75rem;
-}
-
-.mx-20 {
-  margin-left: 5rem;
-  margin-right: 5rem;
-}
-
 .ml-5 {
   margin-left: 1.25rem;
 }
@@ -738,12 +713,16 @@ video {
   margin-bottom: 1.5rem;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .ml-4 {
   margin-left: 1rem;
 }
 
-.mb-10 {
-  margin-bottom: 2.5rem;
+.mb-20 {
+  margin-bottom: 5rem;
 }
 
 .box-content {
@@ -844,22 +823,6 @@ video {
 
 .w-9 {
   width: 2.25rem;
-}
-
-.w-2\/5 {
-  width: 40%;
-}
-
-.w-3\/4 {
-  width: 75%;
-}
-
-.w-4\/5 {
-  width: 80%;
-}
-
-.w-56 {
-  width: 14rem;
 }
 
 .max-w-7xl {
@@ -1269,6 +1232,12 @@ h2 {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@media (min-width: 640px) {
+  .btn {
+    width: 20rem;
+  }
+}
+
 .btn-black {
   border-color: transparent;
   --tw-bg-opacity: 1;
@@ -1276,7 +1245,8 @@ h2 {
 }
 
 .btn-white {
-  background-color: white;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .hover\:opacity-75:hover {
@@ -1303,12 +1273,12 @@ h2 {
     margin-top: 0px;
   }
 
-  .sm\:ml-3 {
-    margin-left: 0.75rem;
+  .sm\:mb-0 {
+    margin-bottom: 0px;
   }
 
-  .sm\:block {
-    display: block;
+  .sm\:mb-20 {
+    margin-bottom: 5rem;
   }
 
   .sm\:flex {
@@ -1327,8 +1297,16 @@ h2 {
     flex-shrink: 0;
   }
 
+  .sm\:flex-col {
+    flex-direction: column;
+  }
+
   .sm\:items-center {
     align-items: center;
+  }
+
+  .sm\:justify-center {
+    justify-content: center;
   }
 
   .sm\:justify-between {
@@ -1339,6 +1317,11 @@ h2 {
     padding: 3rem;
   }
 
+  .sm\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
   .sm\:py-24 {
     padding-top: 6rem;
     padding-bottom: 6rem;
@@ -1347,6 +1330,15 @@ h2 {
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .sm\:py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .sm\:pt-20 {
+    padding-top: 5rem;
   }
 
   .sm\:text-4xl {
@@ -1372,12 +1364,30 @@ h2 {
     display: flex;
   }
 
+  .md\:flex-col {
+    flex-direction: column;
+  }
+
   .md\:items-center {
     align-items: center;
   }
 
+  .md\:justify-center {
+    justify-content: center;
+  }
+
   .md\:justify-between {
     justify-content: space-between;
+  }
+
+  .md\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .md\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 }
 
@@ -1388,6 +1398,10 @@ h2 {
 
   .lg\:block {
     display: block;
+  }
+
+  .lg\:flex {
+    display: flex;
   }
 
   .lg\:hidden {
@@ -1408,6 +1422,14 @@ h2 {
 
   .lg\:grid-rows-1 {
     grid-template-rows: repeat(1, minmax(0, 1fr));
+  }
+
+  .lg\:items-center {
+    align-items: center;
+  }
+
+  .lg\:justify-between {
+    justify-content: space-between;
   }
 
   .lg\:px-8 {
