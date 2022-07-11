@@ -1561,6 +1561,10 @@ h2 {
     flex-direction: row;
   }
 
+  .lg\:flex-col {
+    flex-direction: column;
+  }
+
   .lg\:items-start {
     align-items: flex-start;
   }
@@ -1632,6 +1636,10 @@ h2 {
 
   .lg\:pb-11 {
     padding-bottom: 2.75rem;
+  }
+
+  .lg\:text-center {
+    text-align: center;
   }
 
   .lg\:text-xl {
