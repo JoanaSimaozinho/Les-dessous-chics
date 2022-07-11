@@ -26,11 +26,11 @@ h2 {
 }
 
 .btn {
-    @apply px-4 py-2 text-xs w-full rounded-none inline-flex justify-center items-center transition-all ease-in-out duration-150 border border-transparent;
+    @apply px-4 py-2 text-xs w-full rounded-none inline-flex justify-center items-center transition-all ease-in-out duration-150 border ;
 }
 
-.btn-black {
-    background-color: black;
+.btn-black { 
+    @apply border-transparent bg-black
 }
 
 .btn-white {
