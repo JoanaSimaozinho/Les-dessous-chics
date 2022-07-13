@@ -26,7 +26,7 @@ h2 {
 }
 
 .btn {
-    @apply px-4 py-2 text-xs w-full rounded-none inline-flex justify-center items-center transition-all ease-in-out duration-150 border sm:w-80 ;
+    @apply px-4 py-2 text-xs w-full rounded-none inline-flex justify-center items-center transition-all ease-in-out duration-150 border sm:w-80 lg:text-sm ;
 }
 
 .btn-black { 
