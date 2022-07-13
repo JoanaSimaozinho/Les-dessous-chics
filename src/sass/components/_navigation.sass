@@ -8,13 +8,11 @@
     &-toggler
         @apply bg-transparent border border-transparent text-sm leading-none py-1
 
-        .toggler-icon
-            background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 20 15' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0H0v1.756h20V0ZM20 6.569H0v1.755h20V6.57ZM20 13.244H0V15h20v-1.756Z' fill='%231f1f1f'/%3E%3C/svg%3E")
-            background-size: 100%
-            background-position: 50%
-            @apply inline-block h-6 w-6 align-middle bg-no-repeat
-
     &-light
 
         .navbar-toggler
             @apply border-transparent text-[#1B1A1A]
+
+@layer components
+    .nav-link
+        @apply px-3 block py-2 transition-all ease-in-out duration-150 uppercase text-xs

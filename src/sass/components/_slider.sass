@@ -1,0 +1,43 @@
+.swiper-pagination
+    bottom: 0 !important
+
+    .swiper-pagination-bullet
+        margin: 0 3px !important
+        @apply w-9 h-0 border-t border-[#C4C4C4] rounded-none opacity-100 transition-all ease-in
+
+    .swiper-pagination-bullet-active
+        @apply border-black border-t-2
+
+.swiper-button-prev,
+.swiper-button-next
+    @apply bg-white h-6 w-6 opacity-100 border border-[#C4C4C4] z-50 overflow-visible
+
+    &::after
+        background-image: url("../assets/svg/arrow.svg")
+        font-family: none
+        background-size: 100%
+        background-position: 50%
+        @apply bg-no-repeat content-[''] w-1/2 h-1/2
+
+.swiper-button-next
+
+    &::after
+        @apply transform rotate-180
+
+.slide
+    @apply relative h-52 w-full p-6 flex flex-col overflow-hidden hover:opacity-75 xl:w-auto
+
+    &-img
+        @apply absolute inset-0
+
+        img
+            @apply w-full h-full object-center object-cover
+
+    &-filter
+        @apply absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-gray-800 opacity-60
+
+    &-title
+        @apply relative mt-auto text-center text-xl font-bold text-white font-sackers
+
+    &-tag
+        @apply absolute top-0 right-0 bg-[#FFEEEB] text-sm font-medium px-2.5 py-1.5
