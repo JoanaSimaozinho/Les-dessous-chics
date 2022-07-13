@@ -1,0 +1,21 @@
+@layer components
+    .btn
+        @apply inline-flex items-center justify-center px-6 py-4 border border-transparent text-xs tracking-wide font-semibold text-gray-900/75 bg-transparent focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all ease-in-out duration-150
+
+        &-black
+            @apply border-[#1B1A1A] bg-[#1B1A1A] text-white
+
+            &:hover
+                @apply border-gray-900 bg-gray-900
+
+        &-white
+            @apply border-white bg-white text-[#1B1A1A]
+
+            &:hover
+                @apply border-gray-50 bg-gray-50
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled)
+    @apply cursor-pointer
+
+button:focus:not(:focus-visible)
+    @apply outline-none

@@ -1,0 +1,34 @@
+@import "bootstrap/scss/functions"
+@import "bootstrap/scss/variables"
+@import "bootstrap/scss/mixins"
+
+$breakpoints: (xs: 0,sm: 576px,md: 768px,lg: 992px,xl: 1200px,xxl: 1400px)
+$columns: 12
+
+@each $breakpoint in map-keys($breakpoints)
+    $infix: breakpoint-infix($breakpoint, $breakpoints)
+
+    @include media-breakpoint-up($breakpoint, $breakpoints)
+        .col#{$infix}
+            flex: 1 0 0%
+
+        .row-cols#{$infix}-auto > *
+            @include make-col-auto()
+
+        @if $grid-row-columns > 0
+            @for $i from 1 through $grid-row-columns
+                .row-cols#{$infix}-#{$i}
+                    @include row-cols($i)
+
+        .col#{$infix}-auto
+            @include make-col-auto()
+
+        @if $columns > 0
+            @for $i from 1 through $columns
+                .col#{$infix}-#{$i}
+                    @include make-col($i, $columns)
+
+            @for $i from 0 through ($columns - 1)
+                @if not ($infix == "" and $i == 0)
+                    .offset#{$infix}-#{$i}
+                        @include make-col-offset($i, $columns)
