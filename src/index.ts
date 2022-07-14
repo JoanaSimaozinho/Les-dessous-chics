@@ -9,6 +9,11 @@ const swiper = new Swiper(".swiper", {
   pagination: {
     el: ".swiper-pagination",
   },
+  breakpoints: {
+    992: {
+      slidesPerView: 5,
+    },
+  },
   slidesPerView: 2,
   spaceBetween: 5,
   // Navigation arrows
