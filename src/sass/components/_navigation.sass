@@ -1,18 +1,26 @@
-.navbar
-    @apply relative flex items-center flex-wrap justify-between py-2
+.nav-link
+    @apply py-3 px-4 border-transparent relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 text-opacity-75
 
-    &> .container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl
-        flex-wrap: inherit
-        @apply flex items-center justify-between
+.nav-link:hover
+    @apply text-opacity-100
 
-    &-toggler
-        @apply bg-transparent border border-transparent text-sm leading-none py-1
+.mobile-menu
+    @apply fixed inset-0 flex z-40 lg:hidden
 
-    &-light
+.mobile-menu-overlay
+    @apply fixed inset-0 bg-black bg-opacity-25 transition-opacity ease-linear duration-300 opacity-0
 
-        .navbar-toggler
-            @apply border-transparent text-[#1B1A1A]
+.mobile-menu.open .mobile-menu-overlay
+    @apply opacity-100
 
-@layer components
-    .nav-link
-        @apply px-3 block py-2 transition-all ease-in-out duration-150 uppercase text-xs
+.mobile-menu-container
+    @apply relative max-w-xs w-full bg-white shadow-xl pb-12 flex flex-col overflow-y-auto transition ease-in-out duration-300 transform -translate-x-full
+
+.mobile-menu.open .mobile-menu-container
+    @apply translate-x-0
+
+.dropdown-menu
+    @apply absolute top-full inset-x-0 text-gray-500 sm:text-sm ease-out opacity-0 z-50 transition duration-300
+
+.dropdown-menu.show
+    @apply opacity-100
