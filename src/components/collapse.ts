@@ -1,19 +1,15 @@
 /**
  * Moonlight Collapse
  */
-import { reflow, getSelectorFromElement } from "../utils/index";
-import SelectorEngine from "../utils/selector-engine";
+import { reflow } from "../utils/index";
 
 const CLASS_NAME_SHOW = "show";
 const CLASS_NAME_COLLAPSE = "collapse";
 const CLASS_NAME_COLLAPSING = "collapsing";
 
-const SELECTOR_DATA_TOGGLE = '[data-toggle="collapse"]';
-
 export default class Collapse {
   private element: HTMLElement;
   private isTransitioning: boolean;
-  private triggerArray: HTMLElement[];
 
   constructor(element: HTMLElement) {
     this.element = element;
@@ -29,8 +25,6 @@ export default class Collapse {
   }
 
   private open = () => {
-    console.log("open");
-
     if (this.isTransitioning || this.isShown()) {
       return;
     }

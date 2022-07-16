@@ -1,59 +1,50 @@
-.navbar
-    @apply flex flex-wrap items-center justify-between py-4
+@layer components
+    .navbar
+        @apply flex flex-wrap items-center justify-between pt-4 mb-4
 
-    .container
-        flex-wrap: inherit
-        @apply flex items-center justify-between
+        .container
+            flex-wrap: inherit
+            @apply flex items-center justify-between
 
-    &-collapse
-        @apply grow items-center w-full
+        &-collapse
+            @apply grow items-center w-full
 
+        &-expand-lg
+            @screen lg
+                .navbar-collapse
+                    @apply flex
+
+                .navbar-nav
+                    @apply flex-row space-x-4
     .navbar-nav
         @apply flex flex-col px-4
 
-    &-expand-lg
+    .nav-item
+        @apply border-b-[0.87px] border-[#A2A2A2]/30 lg:border-0
+
+    .nav-link
+        @apply block transition-all ease-in-out duration-150 py-3 font-sackers uppercase text-xs font-medium
+
+        &:hover
+            @apply text-opacity-100
+
+        &.promo
+            @apply text-[#EB3535]
+
+            &.active, &:hover
+                @apply border-[#EB3535]
+
         @screen lg
-            .navbar-collapse
-                @apply flex
+            &
+                @apply border-b-2 border-b-transparent
+            &.active, &:hover
+                @apply border-black
 
-            .navbar-nav
-                @apply flex-row space-x-4
+    .navbar-toggler
+        @apply bg-[#F9F9F9] p-2 text-gray-400
 
-.nav-item
-    @apply border-b-[0.87px] border-[#A2A2A2]/30 lg:border-0
+    .nav-sub-menu
+        @apply lg:absolute top-full inset-x-0 text-sm text-gray-500 z-50 lg:border-b border-black
 
-.nav-link
-    @apply block transition-all ease-in-out duration-150 py-3 font-sackers uppercase text-xs font-medium
-
-    &.promo
-        @apply text-[#EB3535]
-
-        &.active, &:hover
-            @apply border-[#EB3535]
-
-    @screen lg
-        &
-            @apply border-b-2 border-b-transparent
-        &.active, &:hover
-            @apply border-black
-
-.nav-link:hover
-    @apply text-opacity-100
-
-.dropdown-menu
-    @apply absolute top-full inset-x-0 text-gray-500 sm:text-sm ease-out opacity-0 z-50 transition duration-300
-
-.dropdown-menu.show
-    @apply opacity-100
-
-.navbar-toggler
-    @apply bg-[#F9F9F9] p-2 text-gray-400
-
-.sub-nav-menu
-    @apply absolute top-full inset-x-0 text-sm text-gray-500 z-50
-
-    &:not(.show)
-        @apply hidden
-        
-.sub-nav-link
-    @apply text-sm
+    .sub-nav-link
+        @apply text-sm

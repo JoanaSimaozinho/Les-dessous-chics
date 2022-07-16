@@ -14,8 +14,9 @@
             &:hover
                 @apply border-gray-50 bg-gray-50
 
-[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled)
-    @apply cursor-pointer
+@layer base
+    [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled)
+        @apply cursor-pointer
 
-button:focus:not(:focus-visible)
-    @apply outline-none
+    button:focus:not(:focus-visible)
+        @apply outline-none

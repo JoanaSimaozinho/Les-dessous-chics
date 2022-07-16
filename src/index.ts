@@ -9,31 +9,39 @@ import Collapse from "./components/collapse";
 
 class Moonlight {
   constructor() {
-    this.navbar = this.navbar.bind(this);
+    this.init = this.init.bind(this);
   }
 
   init() {
-    document
-      .querySelectorAll<HTMLElement>(".dropdown")
-      .forEach((dropdown) => new Dropdown(dropdown));
-    this.navbar();
-    this.megaMenu();
+    this.collapse();
+    this.dropdown();
   }
 
-  navbar() {
-    const toggler = document.querySelector<HTMLElement>(".navbar-toggler");
-    const collapse = document.querySelector<HTMLElement>(".navbar-collapse");
+  collapse() {
+    const collapseTogglers = document.querySelectorAll<HTMLElement>(
+      "[data-toggle=collapse]"
+    );
 
-    toggler.addEventListener("click", () => new Collapse(collapse).toggle());
+    collapseTogglers.forEach((el) => {
+      const collapseElement = document.querySelector<HTMLElement>(
+        el.getAttribute("data-target")
+      );
+
+      el.addEventListener("click", () =>
+        new Collapse(collapseElement).toggle()
+      );
+    });
   }
 
-  megaMenu() {
-    const navLink = document.querySelector<HTMLElement>(".nav-link");
-    const subMenu = document.querySelector<HTMLElement>(".sub-nav-menu");
+  dropdown() {
+    const dropdownTogglers = document.querySelectorAll<HTMLElement>(
+      "[data-toggle=dropdown]"
+    );
 
-    navLink.addEventListener("click", (e) => {
-      e.preventDefault();
-      subMenu.classList.toggle("show");
+    dropdownTogglers.forEach((el) => {
+      const dropdown = new Dropdown(el);
+      dropdown.parent.addEventListener("mouseenter", () => dropdown.show());
+      dropdown.parent.addEventListener("mouseleave", () => dropdown.hide());
     });
   }
 }

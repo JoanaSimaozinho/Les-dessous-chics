@@ -1,5 +1,7 @@
-.collapse:not(.show)
-    @apply hidden
+@layer components
+    .collapse
+        &:not(.show)
+            @apply hidden
 
 .collapsing
     transition: height .35s ease

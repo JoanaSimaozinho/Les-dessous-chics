@@ -1,0 +1,10 @@
+@layer components
+    .dropdown-menu
+        &:not(.show)
+            @apply hidden
+
+.entering
+    @apply opacity-100 transition-opacity ease-out duration-200
+
+.leaving
+    @apply opacity-0 transition-opacity ease-in duration-150
