@@ -1,6 +1,6 @@
 @layer components
     .navbar
-        @apply flex flex-wrap items-center justify-between pt-4 mb-4
+        @apply relative flex flex-wrap items-center justify-between py-4 border-b border-[#E9E9E9]
 
         .container
             flex-wrap: inherit
@@ -9,21 +9,29 @@
         &-collapse
             @apply grow items-center w-full
 
+        &-menu
+            @apply hidden grow items-center w-full
+
         &-expand-lg
             @screen lg
-                .navbar-collapse
+                .mobile-menu
+                    @apply hidden
+                .navbar-menu
                     @apply flex
-
                 .navbar-nav
-                    @apply flex-row space-x-4
+                    @apply flex-row space-x-4 px-0
+
+    .mobile-menu
+        @apply absolute inset-x-0 top-full z-40 bg-white border-t border-[#E9E9E9]
+
     .navbar-nav
-        @apply flex flex-col px-4
+        @apply flex flex-col w-full px-4
 
     .nav-item
         @apply border-b-[0.87px] border-[#A2A2A2]/30 lg:border-0
 
     .nav-link
-        @apply block transition-all ease-in-out duration-150 py-3 font-sackers uppercase text-xs font-medium
+        @apply flex transition-all ease-in-out duration-150 py-3 font-sackers uppercase text-xs font-medium
 
         &:hover
             @apply text-opacity-100
@@ -43,8 +51,40 @@
     .navbar-toggler
         @apply bg-[#F9F9F9] p-2 text-gray-400
 
+        .menu-icon
+            @apply relative w-3 h-3 transition-transform duration-500
+
+            span
+                @apply absolute block w-3 h-px bg-black top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-colors duration-500 rounded
+
+                &::before,
+                &::after
+                    @apply content-[''] absolute block w-3 h-px bg-black top-0 left-0 transform -translate-y-1 rounded transition-all duration-500
+
+                &::after
+                    @apply translate-y-1
+
+        &.toggled
+            @apply bg-[#1B1A1A]
+
+            .menu-icon
+                @apply transform rotate-180
+                span
+                    @apply bg-transparent
+                    &::before
+                        @apply translate-y-0 rotate-45 bg-white
+                    &::after
+                        @apply translate-y-0 -rotate-45 bg-white
+
     .nav-sub-menu
-        @apply lg:absolute top-full inset-x-0 text-sm text-gray-500 z-50 lg:border-b border-black
+        @apply lg:absolute top-full inset-x-0 text-sm text-gray-500 z-50 lg:border-b border-black -mt-4
 
     .sub-nav-link
-        @apply text-sm
+        @apply text-sm flex
+
+    .mobile-menu
+        .sub-nav
+            @apply pb-2
+
+            .sub-nav-link
+                @apply py-1.5
