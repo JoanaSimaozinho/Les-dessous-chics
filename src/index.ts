@@ -40,8 +40,18 @@ class Moonlight {
 
     dropdownTogglers.forEach((el) => {
       const dropdown = new Dropdown(el);
-      dropdown.parent.addEventListener("mouseenter", () => dropdown.show());
-      dropdown.parent.addEventListener("mouseleave", () => dropdown.hide());
+
+      const screenWidth = window.innerWidth;
+
+      if (screenWidth < 1024) {
+        el.addEventListener("click", (event) => {
+          event.preventDefault();
+          dropdown.toggle();
+        });
+      } else {
+        dropdown.parent.addEventListener("mouseenter", () => dropdown.show());
+        dropdown.parent.addEventListener("mouseleave", () => dropdown.hide());
+      }
     });
   }
 }

@@ -3,47 +3,49 @@
 @import "bootstrap/scss/mixins"
 
 @layer components
-    .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl, .containerFluid
-        @include make-container($gutter: 1rem)
+    .container
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+    // .container, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl, .containerFluid
+    //     @include make-container($gutter: 1rem)
 
-    .container, .container-sm
-        @screen sm
-            max-width: 540px
-        @screen md
-            max-width: 720px
-        @screen lg
-            max-width: 960px
-        @screen xl
-            max-width: 1140px
-        @screen 2xl
-            max-width: 1320px
+    // .container, .container-sm
+    //     @screen sm
+    //         max-width: 540px
+    //     @screen md
+    //         max-width: 720px
+    //     @screen lg
+    //         max-width: 960px
+    //     @screen xl
+    //         max-width: 1140px
+    //     @screen 2xl
+    //         max-width: 1320px
 
-    .container-md
-        @screen md
-            max-width: 720px
-        @screen lg
-            max-width: 960px
-        @screen xl
-            max-width: 1140px
-        @screen 2xl
-            max-width: 1320px
+    // .container-md
+    //     @screen md
+    //         max-width: 720px
+    //     @screen lg
+    //         max-width: 960px
+    //     @screen xl
+    //         max-width: 1140px
+    //     @screen 2xl
+    //         max-width: 1320px
 
-    .container-lg
-        @screen lg
-            max-width: 960px
-        @screen xl
-            max-width: 1140px
-        @screen 2xl
-            max-width: 1320px
-
-
-    .container-xl
-        @screen xl
-            max-width: 1140px
-        @screen 2xl
-            max-width: 1320px
+    // .container-lg
+    //     @screen lg
+    //         max-width: 960px
+    //     @screen xl
+    //         max-width: 1140px
+    //     @screen 2xl
+    //         max-width: 1320px
 
 
-    .container-xxl
-        @screen 2xl
-            max-width: 1320px
+    // .container-xl
+    //     @screen xl
+    //         max-width: 1140px
+    //     @screen 2xl
+    //         max-width: 1320px
+
+
+    // .container-xxl
+    //     @screen 2xl
+    //         max-width: 1320px
